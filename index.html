@@ -1,179 +1,260 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grean Tulsi Restaurant – Trincomalee</title>
-  <meta name="description" content="Grean Tulsi Rooftop Garden Restaurant, Trincomalee. View menu & prices, order on WhatsApp, call now, and open in Google Maps." />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grean Tulsi Restaurant – Trincomalee</title>
+    <meta
+      name="description"
+      content="Grean Tulsi Rooftop Garden Restaurant, Trincomalee. View menu & prices, order on WhatsApp, call now, and open in Google Maps."
+    />
 
-  <link rel="icon" href="assets/logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="header">
-    <a class="brand" href="#top" aria-label="Home">
-      <img class="brand__logo" src="assets/logo.png" alt="Grean Tulsi logo" />
-    </a>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="brand" href="#top" aria-label="Home">
+        <img class="brand__logo" src="assets/logo.png" alt="Grean Tulsi logo" />
+      </a>
 
-    <nav class="nav">
-      <a href="#menu">Menu</a>
-      <a href="#info">Info</a>
-      <a href="#map">Map</a>
-    </nav>
+      <nav class="nav">
+        <a href="#menu">Menu</a>
+        <a href="#info">Info</a>
+        <a href="#map">Map</a>
+      </nav>
 
-    <div class="header__cta">
-      <a class="btn btn--ghost" id="btnCallTop" href="#">Call</a>
-      <a class="btn" id="btnWhatsAppTop" href="#" target="_blank" rel="noreferrer">Order on WhatsApp</a>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero__bg" role="img" aria-label="Sri Lankan food"></div>
-      <div class="container hero__content">
-        <div class="hero__badge">Rooftop Garden Restaurant • Trincomalee</div>
-        <h1 class="hero__title">Grean Tulsi</h1>
-        <p class="hero__subtitle">
-          Menu + prices, quick order buttons, and map — all in one clean page.
-        </p>
-
-        <div class="hero__actions">
-          <a class="btn" id="btnWhatsAppHero" href="#" target="_blank" rel="noreferrer">Order on WhatsApp</a>
-          <a class="btn btn--ghost" id="btnCallHero" href="#">Call now</a>
-          <a class="btn btn--ghost" href="https://maps.app.goo.gl/8sZWgqerFR1p9QJw6" target="_blank" rel="noreferrer">Open in Google Maps</a>
-        </div>
-
-        <div class="hero__quick">
-          <div class="card">
-            <div class="card__k">Hotline (WhatsApp)</div>
-            <div class="card__v" id="hotlineText">0775515510</div>
-          </div>
-          <div class="card">
-            <div class="card__k">Address</div>
-            <div class="card__v">217 Thirugnanasampanthar Street, Trincomalee</div>
-          </div>
-          <div class="card">
-            <div class="card__k">Opening Hours</div>
-            <div class="card__v" id="hoursText">10:00 AM – 10:00 PM (Daily)</div>
-          </div>
-        </div>
+      <div class="header__cta">
+        <a class="btn btn--ghost" id="btnCallTop" href="#">Call</a>
+        <a
+          class="btn"
+          id="btnWhatsAppTop"
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+          >Order on WhatsApp</a
+        >
       </div>
-    </section>
+    </header>
 
-    <section class="section" id="menu">
-      <div class="container">
-        <div class="section__head">
-          <h2>Menu & Prices</h2>
-          <div class="section__headRight">
-            <a class="btn btn--ghost" href="assets/menu.pdf" target="_blank" rel="noreferrer">Open Menu PDF</a>
-            <a class="btn btn--ghost" href="assets/menu.pdf" download>Download PDF</a>
-          </div>
-        </div>
+    <main id="top">
+      <section class="hero">
+        <div class="hero__bg" role="img" aria-label="Sri Lankan food"></div>
+        <div class="container hero__content">
+          <div class="hero__badge">Rooftop Garden Restaurant • Trincomalee</div>
+          <h1 class="hero__title">Grean Tulsi</h1>
+          <p class="hero__subtitle">
+            Menu + prices, quick order buttons, and map — all in one clean page.
+          </p>
 
-        <div class="menuTools">
-          <input class="input" id="searchInput" type="search" placeholder="Search dish… (e.g., biriyani, kottu, noodles)" />
-          <div class="chips" id="chips"></div>
-        </div>
-
-        <div class="menuMeta" id="menuMeta">Loading menu…</div>
-
-        <div class="menuWrap" id="menuWrap" aria-live="polite"></div>
-
-        <details class="pdfBox">
-          <summary>Preview full menu PDF (tap to open)</summary>
-          <div class="pdfFrameWrap">
-            <object data="assets/menu.pdf" type="application/pdf" class="pdfFrame">
-              <p>Your browser can’t preview PDFs here. Use the buttons above to open/download.</p>
-            </object>
-          </div>
-        </details>
-
-        <p class="tiny">
-          Prices are shown as in the provided menu PDF. If you update prices later, just replace <code>assets/menu.pdf</code> and <code>assets/menu.json</code>.
-        </p>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="info">
-      <div class="container">
-        <h2>Restaurant Info</h2>
-
-        <div class="grid3">
-          <div class="infoCard">
-            <h3>Call</h3>
-            <p><a id="telLink1" href="#">Tel: 026 222 8578</a></p>
-            <p><a id="telLink2" href="#">Hotline: 077 551 5510</a></p>
-            <p><a id="telLink3" href="#">Hotline: 077 226 9504</a></p>
+          <div class="hero__actions">
+            <a
+              class="btn"
+              id="btnWhatsAppHero"
+              href="#"
+              target="_blank"
+              rel="noreferrer"
+              >Order on WhatsApp</a
+            >
+            <a class="btn btn--ghost" id="btnCallHero" href="#">Call now</a>
+            <a
+              class="btn btn--ghost"
+              href="https://maps.app.goo.gl/8sZWgqerFR1p9QJw6"
+              target="_blank"
+              rel="noreferrer"
+              >Open in Google Maps</a
+            >
           </div>
 
-          <div class="infoCard">
-            <h3>Order</h3>
-            <p>Fastest: WhatsApp order message with your items + quantity.</p>
-            <div class="stack">
-              <a class="btn" id="btnWhatsAppInfo" href="#" target="_blank" rel="noreferrer">Order on WhatsApp</a>
-              <a class="btn btn--ghost" href="#menu">View Menu</a>
+          <div class="hero__quick">
+            <div class="card">
+              <div class="card__k">Hotline (WhatsApp)</div>
+              <div class="card__v" id="hotlineText">0775515510</div>
             </div>
-          </div>
-
-          <div class="infoCard">
-            <h3>Location</h3>
-            <p>217 Thirugnanasampanthar Street, Trincomalee</p>
-            <div class="stack">
-              <a class="btn btn--ghost" href="https://maps.app.goo.gl/8sZWgqerFR1p9QJw6" target="_blank" rel="noreferrer">Open in Google Maps</a>
+            <div class="card">
+              <div class="card__k">Address</div>
+              <div class="card__v">
+                217 Thirugnanasampanthar Street, Trincomalee
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__k">Opening Hours</div>
+              <div class="card__v" id="hoursText">
+                10:00 AM – 10:00 PM (Daily)
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="note">
+      <section class="section" id="menu">
+        <div class="container">
+          <div class="section__head">
+            <h2>Menu & Prices</h2>
+            <div class="section__headRight">
+              <a
+                class="btn btn--ghost"
+                href="assets/menu.pdf"
+                target="_blank"
+                rel="noreferrer"
+                >Open Menu PDF</a
+              >
+              <a class="btn btn--ghost" href="assets/menu.pdf" download
+                >Download PDF</a
+              >
+            </div>
+          </div>
+
+          <div class="menuTools">
+            <input
+              class="input"
+              id="searchInput"
+              type="search"
+              placeholder="Search dish… (e.g., biriyani, kottu, noodles)"
+            />
+            <div class="chips" id="chips"></div>
+          </div>
+
+          <div class="menuMeta" id="menuMeta">Loading menu…</div>
+
+          <div class="menuWrap" id="menuWrap" aria-live="polite"></div>
+
+          <details class="pdfBox">
+            <summary>Preview full menu PDF (tap to open)</summary>
+            <div class="pdfFrameWrap">
+              <object
+                data="assets/menu.pdf"
+                type="application/pdf"
+                class="pdfFrame"
+              >
+                <p>
+                  Your browser can’t preview PDFs here. Use the buttons above to
+                  open/download.
+                </p>
+              </object>
+            </div>
+          </details>
+
+          <p class="tiny">
+            Prices are shown as in the provided menu PDF. If you update prices
+            later, just replace <code>assets/menu.pdf</code> and
+            <code>assets/menu.json</code>.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="info">
+        <div class="container">
+          <h2>Restaurant Info</h2>
+
+          <div class="grid3">
+            <div class="infoCard">
+              <h3>Call</h3>
+              <p><a id="telLink1" href="#">Tel: 026 222 8578</a></p>
+              <p><a id="telLink2" href="#">Hotline: 077 551 5510</a></p>
+              <p><a id="telLink3" href="#">Hotline: 077 226 9504</a></p>
+            </div>
+
+            <div class="infoCard">
+              <h3>Order</h3>
+              <p>Fastest: WhatsApp order message with your items + quantity.</p>
+              <div class="stack">
+                <a
+                  class="btn"
+                  id="btnWhatsAppInfo"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Order on WhatsApp</a
+                >
+                <a class="btn btn--ghost" href="#menu">View Menu</a>
+              </div>
+            </div>
+
+            <div class="infoCard">
+              <h3>Location</h3>
+              <p>217 Thirugnanasampanthar Street, Trincomalee</p>
+              <div class="stack">
+                <a
+                  class="btn btn--ghost"
+                  href="https://maps.app.goo.gl/8sZWgqerFR1p9QJw6"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Open in Google Maps</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="note">
           <strong>Tip:</strong> You don’t need React for this. A simple static page loads faster, is cheaper, and is easier for the customer to maintain.
+        </div> -->
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="map">
-      <div class="container">
-        <div class="section__head">
-          <h2>Map</h2>
-          <a class="btn btn--ghost" href="https://maps.app.goo.gl/8sZWgqerFR1p9QJw6" target="_blank" rel="noreferrer">Open in Google Maps</a>
+      <section class="section" id="map">
+        <div class="container">
+          <div class="section__head">
+            <h2>Map</h2>
+            <a
+              class="btn btn--ghost"
+              href="https://maps.app.goo.gl/8sZWgqerFR1p9QJw6"
+              target="_blank"
+              rel="noreferrer"
+              >Open in Google Maps</a
+            >
+          </div>
+
+          <div class="mapFrameWrap">
+            <iframe
+              class="mapFrame"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Grean%20Tulsi%20Trincomalee&output=embed"
+            >
+            </iframe>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <div class="mapFrameWrap">
-          <iframe
-            class="mapFrame"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Grean%20Tulsi%20Trincomalee&output=embed">
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="stickyBar">
-    <a class="btn btn--ghost" id="btnCallSticky" href="#">Call</a>
-    <a class="btn" id="btnWhatsAppSticky" href="#" target="_blank" rel="noreferrer">Order on WhatsApp</a>
-    <a class="btn btn--ghost" href="#menu">Menu</a>
-  </div>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>
-        <div class="footer__brand">Grean Tulsi</div>
-        <div class="tiny">Rooftop Garden Restaurant • Trincomalee</div>
-      </div>
-      <div class="tiny footer__right">
-        Built for quick menu viewing + easy ordering. 
-        <span class="sep">•</span>
-        <a href="assets/menu.pdf" target="_blank" rel="noreferrer">Menu PDF</a>
-      </div>
+    <div class="stickyBar">
+      <a class="btn btn--ghost" id="btnCallSticky" href="#">Call</a>
+      <a
+        class="btn"
+        id="btnWhatsAppSticky"
+        href="#"
+        target="_blank"
+        rel="noreferrer"
+        >Order on WhatsApp</a
+      >
+      <a class="btn btn--ghost" href="#menu">Menu</a>
     </div>
-  </footer>
 
-  <script src="assets/menu-data.js"></script>
-  <script src="script.js"></script>
-</body>
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <div class="footer__brand">Grean Tulsi</div>
+          <div class="tiny">Rooftop Garden Restaurant • Trincomalee</div>
+        </div>
+        <div class="tiny footer__right">
+          Built for quick menu viewing + easy ordering.
+          <span class="sep">•</span>
+          <a href="assets/menu.pdf" target="_blank" rel="noreferrer"
+            >Menu PDF</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/menu-data.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
