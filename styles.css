@@ -12,10 +12,12 @@
   --brand2:#1ea655;
   --shadow: 0 12px 32px rgba(0,0,0,.45);
   --radius: 18px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 *{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; scroll-padding-top: 92px; }
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -23,6 +25,7 @@ body{
               radial-gradient(900px 500px at 80% 0%, rgba(47,211,111,.10), transparent 55%),
               var(--bg);
   color: var(--text);
+  padding-bottom: calc(96px + var(--safe-bottom)); /* keeps content clear of stickyBar */
 }
 
 a{ color: inherit; text-decoration: none; }
@@ -34,7 +37,7 @@ a{ color: inherit; text-decoration: none; }
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   display:flex; align-items:center; justify-content:space-between;
-  padding: 10px 16px;
+  padding: calc(10px + var(--safe-top)) 16px 10px;
 }
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand__logo{ height:46px; width:auto; border-radius:12px; background:#fff; padding:6px; }
@@ -62,6 +65,9 @@ a{ color: inherit; text-decoration: none; }
   box-shadow: 0 10px 22px rgba(0,0,0,.30);
   transition: transform .12s ease, filter .12s ease;
 }
+
+/* Hide helper: keep desktop labels, shorten on mobile */
+.hideXs{ display:inline; }
 .btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
 .btn:active{ transform: translateY(0px); }
 
@@ -274,7 +280,7 @@ a{ color: inherit; text-decoration: none; }
 
 .stickyBar{
   position: fixed;
-  bottom: 14px;
+  bottom: calc(14px + var(--safe-bottom));
   left: 50%;
   transform: translateX(-50%);
   width: min(860px, 92vw);
@@ -307,4 +313,52 @@ a{ color: inherit; text-decoration: none; }
   .grid3{ grid-template-columns: 1fr; }
   .footer__inner{ flex-direction:column; align-items:flex-start; }
   .footer__right{ text-align:left; }
+}
+
+/* Mobile polish */
+@media (max-width: 520px){
+  html{ scroll-padding-top: 110px; }
+
+  .header{
+    padding: calc(10px + var(--safe-top)) 12px 10px;
+    gap: 10px;
+  }
+  .brand__logo{ height:40px; padding:6px; }
+
+  .header__cta{ flex:1; justify-content:flex-end; flex-wrap:wrap; }
+  .header__cta .btn{ padding: 10px 12px; font-size: 14px; border-radius: 14px; }
+  .header__cta .btn:first-child{ flex:0 0 auto; }
+  .header__cta .btn:not(:first-child){ flex:1 1 170px; }
+
+  .hero{ min-height: auto; }
+  /* Add extra bottom space so the fixed stickyBar doesn't cover hero cards */
+  .hero__content{ padding: 44px 0 calc(110px + var(--safe-bottom)); }
+  .hero__badge{ font-size: 12px; }
+  .hero__subtitle{ font-size: 15px; }
+
+  .hero__actions{ flex-direction: column; align-items: stretch; }
+  .hero__actions .btn{ width: 100%; }
+
+  .section{ padding: 44px 0; }
+  .section h2{ font-size: 24px; }
+  .section__head{ align-items:flex-start; }
+
+  .itemRow{ gap: 10px; padding: 10px 6px; }
+  .itemRow__name{ font-size: 14px; }
+  .itemRow__price{ font-size: 14px; }
+
+  .stickyBar{
+    width: min(860px, 96vw);
+    padding: 10px;
+    gap: 8px;
+  }
+  .stickyBar .btn{ flex:1; padding: 12px 10px; font-size: 14px; }
+  .stickyBar .btn--ghost{ font-weight: 800; }
+
+  .hideXs{ display:none; }
+}
+
+@media (max-width: 380px){
+  .header__cta .btn{ font-size: 13px; padding: 10px 10px; }
+  .stickyBar .btn{ font-size: 13px; }
 }
